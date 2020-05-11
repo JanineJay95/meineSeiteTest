@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+	   <meta charset="utf-8">
+	   <title>Anmelde Formular Freiwilliger Helfer</title>
+	   <link rel="shortcut icon" type="image/x-icon" href="../assets/9751logo.ico">
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <link rel="stylesheet" href="../css/bootstrap.min.css"> 
+	   <link rel="stylesheet" href="../css/normalize.css"> 
+	   <link rel="stylesheet" href="../css/style.css">
+
+	</head>
+		<body>
+		<header>
+			<h1 class="willkommen">Freiwillige Helfer*innen</h1>
+		</header>
+		<div id="hintergrund">
+		<div id="wrapper">
+        <nav>
+        	<ul>
+        	 	<li><a href="../index.html" target="_blank">HOME</a></li>
+				<li><a class="current" href="formular.html">FREIWILLIG MITHELFEN</a></li>
+				<li><a href="bilder.html" target="_blank">BILDERGALERIE</a></li>
+				<li><a href="login.html" target="_blank">LOGIN</a></li>
+			</ul>
+         </nav>			
+		<form novalidate id="form1" name="form1" method="post" onsubmit="return check()" action="danke.html" >
+			<h1>Anmeldeformular</h1>
+			<fieldset id="kontakt"><legend>Meine Daten</legend>
+				<p>Felder mit einem * sind Pflichtfelder</p>
+
+				<div class="form-group">
+				  <label for="anrede">Anrede</label> </br>
+				  	<input class="radio" name="anrede" value="nonbinary" type="radio" checked="checked"> keine Anrede</label>
+					<input class="radio" name="anrede" value="frau" type="radio"> Frau</label> 
+					<input class="radio" name="anrede" value="herr" type="radio"> Herr</label>
+					</p> 
+				</div>	
+
+				<div class="form-group">
+				  <label for="name">Name*</label>  
+				  <input name="nname" placeholder="Name" class="form-control" id="nname" type="text" autofocus required>
+				  	<div id="falsch_nname" class="error"></div>
+					<div id="richtig_nname" class="valide"></div>
+				</div>
+				<div class="form-group">
+				  <label for="vorname">Vorname*</label>  
+				  <input name="vorname" placeholder="Vorname" class="form-control" id="vorname" type=" text" required>
+				  	<div id="falsch_vname" class="error"></div>
+					<div id="richtig_vname" class="valide"></div>
+				 </div>
+				<div class="form-group">
+				  <label for="adresse">Adresse*</label>  
+				  <input name="adresse" placeholder="Adresse" class="form-control" id="adresse" type="text" required>
+				 	 <div id="falsch_adr" class="error"></div>
+					<div id="richtig_adr" class="valide"></div>
+				</div>
+
+				<div class="form-group">
+				  <label for="plz">PLZ*</label>  
+				  <input name="plz" placeholder="PLZ" class="form-control" id="plz" type="text" pattern="[0-9] {4}" required>
+				  	<div id="falsch_plz" class="error"></div>
+					<div id="richtig_plz" class="valide"></div>
+				</div>
+				<div class="form-group">
+				  <label for="ort">Ort*</label>  
+				  <input name="ort" placeholder="Ort" class="form-control" id="ort" type="text" required>
+				  	<div id="falsch_ort" class="error"></div>
+					<div id="richtig_ort" class="valide"></div>
+				</div>
+				<div class="form-group">
+				  <label for="telefon">Telefonnummer</label>  
+				  <input name="telefon" placeholder="044 444 44 44" class="form-control" id="telefon" type="text">
+				  	<div id="falsch_tel" class="error"></div>
+					<div id="richtig_tel" class="valide"></div>
+				</div>
+				<div class="form-group">
+				  <label for="email">E-Mail*</label>  
+				  <input name="email" placeholder="test@test.ch" class="form-control" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+				  	<div id="falsch_email" class="error"></div>
+					<div id="richtig_email" class="valide"></div>
+				 </div>
+				 <div class="form-group">
+				  <label for="benutzername">Benutzername*</label>  
+				  <input name="benutzername" placeholder="Benutzername" class="form-control" id="benutzername" type="text" autofocus required>
+				  	<div id="falsch_ben" class="error"></div>
+					<div id="richtig_ben" class="valide"></div>
+				</div>	
+				<div class="form-group">
+				  <label for="passwort">Passwort*</label>  
+				  <input name="passwort" placeholder="Passwort" class="form-control" id="passwort" type="password" pattern="{8}" required>
+				  	<div id="falsch_pw" class="error"></div>
+					<div id="richtig_pw" class="valide"></div>
+				</div>	
+				<div class="form-group">
+				  <label for="passwort_best">Passwort*</label>  
+				  <input name="passwort_best" placeholder="Passwort bestätigen" class="form-control" id="passwort_best" type="password" pattern="{8}" required>
+				  	<div id="falsch_pw2" class="error"></div>
+					<div id="richtig_pw2" class="valide"></div>
+				</div>
+				<div class="form-group">
+                	<label class="password-meter-label" for="password">Passwortstärke:</label>
+                		<div class="password-meter">
+                		<div class="password-meter-message">
+                        &nbsp;
+                        </div>
+                	    </div>
+                </div>			
+			</fieldset>
+			<fieldset id="mitgliedschaft">
+				<legend>Mitgliedschaft</legend>
+				<div class="form-group">
+				  <label for="mitgliedschaft">Wir danken dir von Herzen, dass du dich freiwillig Engagierst! Mit einer Mitgliedschaft unterstütz unseren täglichen Einsatz für die not leidenden Tiere dieser Welt noch mehr.  </label>
+					<select class= "textfeld" name="mitglied" id="mitglied" class="form-control">
+						<option value="waehlen"> Bitte wählen... </option>
+						<option value="jahr"> Jahresmitgliedschaft (CHF 100.-) </option>
+						<option value="reduziert"> reduzierte Mitgliedschaft (CHF 50.-) </option>
+						<option value="bereits"> ich bin bereits Mitglied</option>
+					</select></p> 
+					</select>
+				</div>
+			</fieldset>
+			<fieldset id="infos">
+				<legend>Infos:</legend>
+				<div class="form-group">
+				  <label for="message">Bemerkungen:</label>
+					<textarea class="form-control" id="message" name="message"></textarea>
+				</div>
+				<div class="form-group">
+				  <label for="aktion">Interessen: </label> </br>
+					<label class="checkbox-inline" for="aktion-0">
+					<input name="petitionen" id="aktion" value="" type="checkbox"> Petitionen  
+					<input name="demo" id="aktion" value="" type="checkbox"> Demonstrationen  
+					<input name="recherche" id="aktion" value="" type="checkbox"> Recherchearbeit  
+					<input name="strassen" id="aktion" value="" type="checkbox"> Strassenaktionen  
+					</label>
+				</div>
+			</fieldset>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Senden</button>
+			 </div>
+			 <p id="zusatz">EARTHLINGS UNITED ist eine gemeinnützige Stiftung mit Sitz in Zürich. Spenden und Mitgliederbeiträge sind von den Steuern abziehbar. Mit dem Absenden erklärst du dich bereit, dass dich EARTHLINGS UNITED auf dem Laufenden halten darf.</p></br>
+		</form>
+        <script src="../js/jquery-3.1.1.js"></script>
+        <script src="../js/jquery.validate.min.js"></script>
+        <script src="../js/jquery.validate.password.js"></script>
+        <script src="../js/validate.js"></script>
+	</body>
+	<footer>
+	</br>
+	</br>
+	<p>&copy; EARTHLINGS UNITED</p></br>
+	</footer>
+ </div>
+</div>
+</html>
